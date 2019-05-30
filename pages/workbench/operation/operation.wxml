@@ -1,0 +1,132 @@
+<view style='position:fixed;top:0;width:100%;z-index:99;background: #f2f3f7;'>
+  <view class='tab-top'>
+    <text wx:if="{{op==1}}">员工管理</text>
+    <text wx:else>客户管理</text>
+    <image src='../../../images/order.png'></image>
+    <image src='../../../images/order_2.png'></image>
+  </view>
+  <view class='tab-bottom'>
+    <text wx:if='{{op==1}}'>共{{staffList.totalCount}}条数据</text>
+    <text wx:else>共{{customerList.totalCount}}条数据</text>
+    <view bindtap='toAdd'>
+      <image src='../../../images/add.png'></image>
+      <text>新增</text>
+    </view>
+  </view>
+</view>
+<view class='holder' style='height:190rpx'></view>
+
+<view class="modal-mask" bindtap='hideModal' catchtouchmove="preventTouchMove" wx:if="{{showStaffModal||showCustModal}}"></view>
+<!-- 员工模态框 -->
+<view class="modal-dialog" wx:if="{{showStaffModal}}">
+  <view class="modal-title">详细信息</view>
+  <view class="modal-content">
+    <form bindsubmit='editMsg'>
+      <label>姓名：</label>
+      <input name='sta_name' value='{{modalStaff.sta_name}}'></input>
+      <label>性别：</label>
+      <input name='sta_gender' value='{{modalStaff.sta_gender}}'></input>
+      <label>电话：</label>
+      <input name='sta_phone' value='{{modalStaff.sta_phone}}'></input>
+      <label>邮箱：</label>
+      <input name='sta_email' value='{{modalStaff.sta_email}}'></input>
+      <label>负责客户：</label>
+      <input value='{{modalStaff.cus_name==null?"暂无跟进":modalStaff.cus_name}}' disabled></input>
+      <button form-type='submit'>提交修改</button>
+    </form>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-remove" bindtap="onRemove" data-status="remove">移除</view>
+  </view>
+</view>
+
+<!-- 客户模态框 -->
+<view class="modal-dialog" wx:if="{{showCustModal}}">
+  <view class="modal-title">详细信息</view>
+  <view class="modal-content">
+    <form bindsubmit='editMsg'>
+      <label>姓名：</label>
+      <input name='cus_name' value='{{modalCustomer.cus_name}}'></input>
+      <label>性别：</label>
+      <input name='cus_gender' value='{{modalCustomer.cus_gender}}'></input>
+      <label>电话：</label>
+      <input name='cus_phone' type='number' value='{{modalCustomer.cus_phone}}'></input>
+      <label>来源：</label>
+      <picker mode='selector' range='{{cus_source}}' bindchange='change' data-flag='1'>
+        <input name='cus_source' disabled value='{{source_index==null?modalCustomer.cus_source:cus_source[source_index]}}'></input>
+      </picker>
+      <label>行业：</label>
+      <picker mode='selector' range='{{cus_industry}}' bindchange='change' data-flag='2'>
+        <input name='cus_industry' disabled value='{{industry_index==null?modalCustomer.cus_industry:cus_industry[industry_index]}}'></input>
+      </picker>
+      <label>类型：</label>
+      <picker mode='selector' range='{{cus_type}}' bindchange='change' data-flag='3'>
+        <input name='cus_type' disabled value='{{modalCustomer.cus_type==0?"意向客户":"非意向客户"}}' wx:if='{{type_index==null}}'></input>
+        <input name='cus_type' disabled value='{{cus_type[type_index]}}' wx:else></input>
+      </picker>
+      <label>跟进人：</label>
+      <input type='text' disabled value='{{modalCustomer.staff==null?"暂无跟进":modalCustomer.staff.sta_name}}'></input>
+      <button form-type='submit'>提交修改</button>
+    </form>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-remove" bindtap="onRemove" data-status="remove">移除</view>
+  </view>
+</view>
+
+<!-- 员工列表 -->
+<view wx:if="{{op==1}}">
+  <view class='list' wx:for='{{staffList.list}}' wx:key='staff' bindtap='showModal' data-index='{{index}}'>
+    <view class='left'>
+      <image src='../../../images/login_pic.png'></image>
+    </view>
+    <view>
+      <view class='left-top'>
+        <image src='../../../images/op_name.png'></image>
+        <text>{{item.sta_name}}</text>
+      </view>
+      <view class='left-bottom'>
+        <image src='../../../images/fow.png'></image>
+        <text>{{item.cus_name==null?"暂无跟进":item.cus_name}}</text>
+      </view>
+      <view class='right-top'>
+        <image src='../../../images/phone.png'></image>
+        <text>{{item.sta_phone}}</text>
+      </view>
+      <view class='right-bottom'>
+        <image src='../../../images/email.png'></image>
+        <text>{{item.sta_email}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 客户列表 -->
+<view wx:else>
+  <view class='list' wx:for='{{customerList.list}}' wx:key='customer' bindtap='showModal' data-index='{{index}}'>
+    <view class='left'>
+      <image src='../../../images/login_pic.png'></image>
+    </view>
+    <view>
+      <view class='left-top'>
+        <image src='../../../images/op_name.png'></image>
+        <text>{{item.cus_name}}</text>
+      </view>
+      <view class='left-bottom'>
+        <image src='../../../images/source.png'></image>
+        <text>{{item.cus_source}}</text>
+      </view>
+      <view class='right-top'>
+        <image src='../../../images/industry.png'></image>
+        <text>{{item.cus_industry}}</text>
+      </view>
+      <view class='right-bottom'>
+        <image src='../../../images/cust_{{item.cus_type==null?"1":item.cus_type}}.png'></image>
+        <text wx:if='{{item.cus_type==0}}'>意向客户</text>
+        <text wx:else>非意向客户</text>
+      </view>
+    </view>
+  </view>
+</view>

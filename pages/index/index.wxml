@@ -1,0 +1,61 @@
+<view class='head-img'>
+  <image src='../../images/E2.jpg'></image>
+</view>
+<view class='container'>
+  <view class='col'>
+    <view bindtap='{{type==1?"toCustomer":""}}'>
+      <image src='../../images/cust_mag{{type==1?"":"0"}}.png'></image>
+      <text>客户管理</text>
+    </view>
+    <view bindtap='{{type==1?"toStaff":""}}'>
+      <image src='../../images/team_mag{{type==1?"":"0"}}.png'></image>
+      <text>员工管理</text>
+    </view>
+    <view bindtap='{{type==1||type==2?"toDemo":""}}'>
+      <image src='../../images/fow_mag{{type==1||type==2?"":"0"}}.png'></image>
+      <text>跟进记录</text>
+    </view>
+  </view>
+  <view class='col'>
+    <view bindtap='showModal'>
+      <image src='../../images/cust_sta{{type==1||type==2?"":"0"}}.png'></image>
+      <text>行业统计</text>
+    </view>
+    <view bindtap='showTip'>
+      <image src='../../images/kaoqin_mag{{type==1?"":"0"}}.png'></image>
+      <text>考勤管理</text>
+    </view>
+    <view bindtap='showTip'>
+      <image src='../../images/jixiao_mag{{type==1?"":"0"}}.png'></image>
+      <text>绩效管理</text>
+    </view>
+  </view>
+</view>
+
+<view class="modal-mask" bindtap='hideModal' catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 行业统计模态框 -->
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">客户行业统计</view>
+  <view class="modal-content">
+    <view>
+      <label>互联网服务行业</label>
+      <text>{{customerInfo.industry_0}}人</text>
+    </view>
+    <view>
+      <label>教育和培训行业</label>
+      <text>{{customerInfo.industry_1}}人</text>
+    </view>
+    <view>
+      <label>旅游行业</label>
+      <text>{{customerInfo.industry_2}}人</text>
+    </view>
+    <view>
+      <label>健康管理行业</label>
+      <text>{{customerInfo.industry_3}}人</text>
+    </view>
+    <view>
+      <label>生物医药行业</label>
+      <text>{{customerInfo.industry_4}}人</text>
+    </view>
+  </view>
+</view>

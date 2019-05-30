@@ -1,0 +1,42 @@
+<view class='list'>
+  <form bindsubmit='addRecord'>
+    <view>
+      <text>客户名称</text>
+      <input name='cus_name' disabled value='{{cusName}}'></input>
+    </view>
+    <view>
+      <text>跟进方式</text>
+      <picker mode='selector' range='{{fow_way}}' bindchange='fowTime' data-flag='3'>
+        <input name='fol_way' placeholder='请选择您的跟进方式' placeholder-class='holder' disabled value='{{fow_way[way_index]}}'></input>
+      </picker>
+    </view>
+    <view>
+      <text>跟进时间</text>
+      <picker mode='date' bindchange='fowTime' data-flag='1'>
+        <input name='fol_firstTime' placeholder='请选择您的跟进时间' placeholder-class='holder' disabled value='{{cur_time}}'></input>
+      </picker>
+    </view>
+    <view>
+      <text>跟进地点</text>
+      <input name='fol_addr' placeholder='请输入您的跟进地点' placeholder-class='holder' value='{{addr}}'></input>
+      <image src='../../../images/addr_a.png' catchtap='getLocal'></image>
+    </view>
+    <view>
+      <text>跟进状态</text>
+      <picker mode='selector' range='{{fow_state}}' bindchange='fowTime'>
+        <input name='fol_state' placeholder='请选择您的跟进状态' placeholder-class='holder' disabled value='{{fow_state[state_index]}}'></input>
+      </picker>
+    </view>
+    <view>
+      <text>下次跟进时间</text>
+      <picker mode='date' bindchange='fowTime' data-flag='2'>
+        <input name='fol_nextTime' placeholder='请选择您的下次跟进时间' placeholder-class='holder' disabled value='{{nex_time}}'></input>
+      </picker>
+    </view>
+    <view>
+      <text>本次跟进情况</text>
+      <textarea name='fol_detail' disabled></textarea>
+    </view>
+    <button form-type='submit'>更新</button>
+  </form>
+</view>

@@ -1,0 +1,61 @@
+page {
+  background-color: #f2f3f7;
+}
+.list view {
+  line-height: 100rpx;
+  background-color: white;
+  margin-bottom: 5rpx;
+  position: relative;
+}
+.list text {
+  padding-left: 30rpx;
+  color: #3a3a3a;
+}
+.list input {
+  float: right;
+  height: 100rpx;
+  margin-right: 70rpx;
+  font-size: 30rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.list view picker {
+  height: 100rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.holder {
+  font-size: 30rpx;
+  color: #939393;
+}
+.list view:first-child {
+  margin-top: 10rpx;
+}
+
+.list view:nth-child(4){
+  position: relative;
+}
+.list view:nth-child(4) image {
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 35rpx;
+}
+
+.list view:last-child {
+  height: 240rpx;
+}
+
+.list button {
+  width: 500rpx;
+  margin-top: 50rpx;
+  background-color: #1296db;
+  color: white;
+}
+.list button:active {
+  background-color: #0ca0ee;
+}

@@ -1,0 +1,27 @@
+<view class='img'>
+  <image src='../../../images/login_pic.png'></image>
+  <text>客户关系管理系统</text>
+</view>
+<form bindsubmit='normalLogin' style='position: relative;'>
+  <view class='tip' hidden='{{tip==null?"true":""}}'>
+    <text>tip:{{tip}}</text>
+  </view>
+  <view class='user'>
+    <image src='../../../images/user_img.png'></image>
+    <text>|</text>
+    <input type='text' placeholder='请输入账号' placeholder-class='txt' name='username'></input>
+  </view>
+  <view class='pass'>
+    <image src='../../../images/pass_img.png'></image>
+    <text>|</text>
+    <input type='text' password='true' placeholder='请输入密码' placeholder-class='txt' name='password'></input>
+  </view>
+  <view class='btn'>
+    <button form-type='submit'>确认登录</button>
+    <button open-type='getUserInfo' bindgetuserinfo='quickLogin'>微信快捷登录</button>
+  </view>
+</form>
+<view class='to'>
+  <text>没有账号？</text>
+  <navigator url='../register/register'>点击注册</navigator>
+</view>

@@ -1,0 +1,77 @@
+<view class='list' wx:if='{{flag==1}}'>
+  <form bindsubmit='addStaff'>
+    <view>
+      <text>姓名</text>
+      <input type='text' placeholder='请输入员工姓名' placeholder-class='holder' name='sta_name'></input>
+    </view>
+    <view>
+      <text>性别</text>
+      <picker mode='selector' range='{{sta_gender}}' bindchange='bindGender' data-flag='1'>
+        <input type='text' placeholder='请选择员工性别' placeholder-class='holder' disabled value='{{sta_gender[gender_index]}}' name='sta_gender'></input>
+      </picker>
+    </view>
+    <view>
+      <text>电话</text>
+      <input placeholder='请输入联系电话' placeholder-class='holder' type='number' name='sta_phone'></input>
+    </view>
+    <view>
+      <text>邮箱</text>
+      <input type='text' placeholder='请输入邮箱地址' placeholder-class='holder' name='sta_email'></input>
+    </view>
+    <view>
+      <text>初始账号</text>
+      <input type='text' placeholder='请输入初始账号' placeholder-class='holder' name='sta_username'></input>
+    </view>
+    <view>
+      <text>负责客户</text>
+      <picker mode='selector' range='{{fow_state}}' bindchange='fowTime'>
+        <input type='text' placeholder='请选择需要跟进的客户' placeholder-class='holder' disabled value='{{fow_state[state_index]}}'></input>
+      </picker>
+    </view>
+    <button form-type='submit'>提交</button>
+  </form>
+  <view class='tip'>
+    <text>提示：初始密码默认为123456</text>
+  </view>
+</view>
+
+
+
+<view class='list' wx:else>
+  <form bindsubmit='addCust'>
+    <view>
+      <text>姓名</text>
+      <input type='text' placeholder='请输入客户姓名' placeholder-class='holder' name='cus_name'></input>
+    </view>
+    <view>
+      <text>性别</text>
+      <picker mode='selector' range='{{sta_gender}}' bindchange='bindGender' data-flag='1'>
+        <input type='text' placeholder='请选择客户性别' placeholder-class='holder' disabled value='{{sta_gender[gender_index]}}' name='cus_gender'></input>
+      </picker>
+    </view>
+    <view>
+      <text>电话</text>
+      <input type='text' placeholder='请输入联系电话' placeholder-class='holder' type='number' name='cus_phone'></input>
+    </view>
+    <view>
+      <text>行业</text>
+      <picker mode='selector' range='{{cus_industry}}' bindchange='bindGender' data-flag='2'>
+        <input type='text' placeholder='请选择客户行业' placeholder-class='holder' disabled value='{{cus_industry[industry_index]}}' name='cus_industry'></input>
+      </picker>
+    </view>
+    <view>
+      <text>来源</text>
+      <picker mode='selector' range='{{cus_source}}' bindchange='bindGender' data-flag='3'>
+        <input type='text' placeholder='请选择客户来源' placeholder-class='holder' disabled value='{{cus_source[source_index]}}' name='cus_source'></input>
+      </picker>
+    </view>
+    <view>
+      <text>类型</text>
+      <picker mode='selector' range='{{cus_type}}' bindchange='bindGender' data-flag='4'>
+        <input type='text' placeholder='请选择客户类型' placeholder-class='holder' disabled value='{{cus_type[type_index]}}'></input>
+        <input hidden='true' name='cus_type' value='{{type_index}}'></input>
+      </picker>
+    </view>
+    <button form-type='submit'>提交</button>
+  </form>
+</view>

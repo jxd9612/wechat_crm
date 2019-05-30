@@ -1,0 +1,100 @@
+.img {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 80rpx;
+  margin-bottom: 60rpx;
+}
+
+.img image {
+  width: 320rpx;
+  height: 300rpx;
+  border-radius: 50%;
+}
+
+.img text {
+  font-size: 40rpx;
+  color: #1296db;
+}
+
+.user, .pass {
+  height: 70rpx;
+  width: 500rpx;
+  border: 2rpx solid #e0e0e0;
+  margin: 20rpx auto;
+  position: relative;
+}
+
+.user input, .pass input {
+  height: 100%;
+  width: 360rpx;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  position: absolute;
+  top: 0;
+  left: 60rpx;
+  box-sizing: border-box;
+}
+
+.txt {
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+
+.user image, .pass image {
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10rpx;
+}
+
+.user text, .pass text {
+  line-height: 70rpx;
+  color: #e0e0e0;
+  position: absolute;
+  top: 0;
+  left: 60rpx;
+}
+
+.btn button {
+  color: white;
+  width: 500rpx;
+  background-color: #1296db;
+  margin: 10rpx auto;
+}
+
+.btn button:active {
+  background-color: #0ca0ee;
+}
+
+.btn button:first-child {
+  margin-top: 50rpx;
+}
+
+.to {
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.to navigator {
+  color: #1296db;
+  display: inline-block;
+}
+
+.to navigator:active {
+  color: #0ca0ee;
+}
+
+.tip {
+  position: absolute;
+  top: -60rpx;
+  left: 140rpx;
+  font-size: 30rpx;
+  height: 40rpx;
+  width: 500rpx;
+  text-align: center;
+  color: red;
+}

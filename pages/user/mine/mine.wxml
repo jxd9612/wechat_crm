@@ -1,0 +1,38 @@
+<view class='header'>
+  <view></view>
+  <image wx:if='{{user_info.avatarUrl==null}}' src='../../../images/mini_y.png'></image>
+  <image wx:else src='{{user_info.avatarUrl}}'></image>
+  <view>
+    <text class='txt1' wx:if="{{user_info!=null}}">{{user_info.type==1?user_info.uname:user_info.sta_uname}}</text>
+    <text class='txt2' wx:if="{{user_info!=null}}">{{user_info.type==1?'管理':'员工'}}　|　公司</text>
+    <navigator url='../login/login' hover-class="none" wx:else>登录/注册</navigator>
+  </view>
+</view>
+<view class='v_body'>
+  <view>
+    <image src='../../../images/info.png'></image>
+    <text>我的资料</text>
+  </view>
+  <view hidden='{{user_info.type==1?"":true}}' bindtap='toAdd' data-add_flag='1'>
+    <image src='../../../images/_add.png'></image>
+    <text>添加员工</text>
+  </view>
+  <view>
+    <image src='../../../images/addr.png'></image>
+    <text>我的工作动态</text>
+  </view>
+  <view bindtap='toUpdate' data-update='1'>
+    <image src='../../../images/reset.png'></image>
+    <text>修改登录密码</text>
+  </view>
+  <view hidden='{{user_info.openId==null&&user_info!=null?"":true}}'>
+    <button class='btn' open-type='getUserInfo' bindgetuserinfo='bindInfo'>
+      <image src='../../../images/bind.png'></image>
+      <text>绑定微信</text>
+    </button>
+  </view>
+  <view bindtap='clearUserInfo' hidden='{{user_info==null?true:""}}'>
+    <image src='../../../images/quit.png'></image>
+    <text>退出登录</text>
+  </view>
+</view>

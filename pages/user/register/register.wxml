@@ -1,0 +1,16 @@
+<view class='info'>
+  <view hidden='{{user_flag?true:""}}'>***请输入正确的用户名</view>
+  <view hidden='{{pass_flag?true:""}}'>***请输入正确的密码</view>
+  <view hidden='{{check_pass?true:""}}'>***密码有误</view>
+  <form bindsubmit='register' wx:if='{{update==null}}'>
+    <input type='text' placeholder='字母开头，数字、字符6~8位的账号' placeholder-class='txt' focus='true' bindblur='checkUser' data-reg='1' name='username'></input>
+    <input type='text' placeholder='字母、数字或字符6~12位的密码' placeholder-class='txt' bindblur='checkPass' data-reg='2' name='password'></input>
+    <button form-type='submit'>注册</button>
+  </form>
+
+  <form bindsubmit='updatePassword' wx:else>
+    <input type='text' placeholder='请输入当前密码' placeholder-class='txt' focus='true' bindblur='check'></input>
+    <input type='text' placeholder='请输入更新密码' placeholder-class='txt' bindblur='checkPass' name='password'></input>
+    <button form-type='submit'>更新</button>
+  </form>
+</view>

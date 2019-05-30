@@ -1,0 +1,30 @@
+.info {
+  margin: 120rpx auto;
+  position: relative;
+}
+.info view {
+  position: absolute;
+  top: -35rpx;
+  left: 120rpx;
+  font-size: 30rpx;
+  color: red;
+}
+.info input {
+  width: 500rpx;
+  height: 70rpx;
+  margin: 30rpx auto;
+  padding-left: 10rpx;
+  border-bottom: 1rpx solid #cdcdcd;
+}
+.txt {
+  font-size: 30rpx;
+  color: #cdcdcd;
+}
+.info button {
+  width: 500rpx;
+  color: #bfbfbf;
+  background-color: #e6e6e6;
+}
+.info button:active {
+  background-color: #fff;
+}

@@ -1,0 +1,51 @@
+<view class='list' wx:for='{{customerList.list}}' wx:key='customer' bindtap='showModal' data-index='{{index}}'>
+  <view class='left'>
+    <image src='../../../images/login_pic.png'></image>
+  </view>
+  <view>
+    <view class='left-top'>
+      <image src='../../../images/op_name.png'></image>
+      <text>{{item.cus_name}}</text>
+    </view>
+    <view class='left-bottom'>
+      <image src='../../../images/source.png'></image>
+      <text>{{item.cus_source}}</text>
+    </view>
+    <view class='right-top'>
+      <image src='../../../images/industry.png'></image>
+      <text>{{item.cus_industry}}</text>
+    </view>
+    <view class='right-bottom'>
+      <image src='../../../images/cust_{{item.cus_type==null?"1":item.cus_type}}.png'></image>
+      <text wx:if='{{item.cus_type==0}}'>意向客户</text>
+      <text wx:else>非意向客户</text>
+    </view>
+  </view>
+</view>
+
+<view class="modal-mask" bindtap='hideModal' catchtouchmove="preventTouchMove" wx:if="{{showCustModal}}"></view>
+<!-- 客户模态框 -->
+<view class="modal-dialog" wx:if="{{showCustModal}}">
+  <view class="modal-title">详细信息</view>
+  <view class="modal-content">
+    <form bindsubmit='editMsg'>
+      <label>姓名：</label>
+      <input name='cus_name' disabled value='{{modalCustomer.cus_name}}'></input>
+      <label>性别：</label>
+      <input name='cus_gender' disabled value='{{modalCustomer.cus_gender}}'></input>
+      <label>电话：</label>
+      <input name='cus_phone' disabled type='number' value='{{modalCustomer.cus_phone}}'></input>
+      <label>来源：</label>
+      <input name='cus_source' disabled value='{{source_index==null?modalCustomer.cus_source:cus_source[source_index]}}'></input>
+      <label>行业：</label>
+      <input name='cus_industry' disabled value='{{industry_index==null?modalCustomer.cus_industry:cus_industry[industry_index]}}'></input>
+      <label>类型：</label>
+      <input name='cus_type' disabled value='{{modalCustomer.cus_type==0?"意向客户":"非意向客户"}}' wx:if='{{type_index==null}}'></input>
+      <input name='cus_type' disabled value='{{cus_type[type_index]}}' wx:else></input>
+    </form>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel">取消</view>
+    <view class="btn-remove" bindtap="onFollow">跟进</view>
+  </view>
+</view>

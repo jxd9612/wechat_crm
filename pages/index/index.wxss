@@ -1,0 +1,84 @@
+/* 头部大图 */
+
+.head-img image {
+  width: 100%;
+}
+
+/* 操作选项 */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: row;
+}
+
+.col view {
+  display: flex;
+  flex-direction: column;
+  margin: 25rpx 65rpx;
+}
+
+.col view image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+
+.col view text {
+  font-size: 30rpx;
+  text-align: center;
+}
+
+/* 模态框 */
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  margin: 0 105rpx;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  overflow: hidden;
+  z-index: 9999;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 35rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 30rpx;
+}
+
+.modal-content view {
+  margin: 20rpx 0;
+  color: #8a8a8a;
+  font-size: 35rpx;
+}
+
+.modal-content view text {
+  float: right;
+  padding-right: 30rpx;
+  color: #2c2c2c;
+}

@@ -1,0 +1,92 @@
+page {
+  background-color: #ececec;
+}
+
+.header {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.header view:first-child {
+  height: 150rpx;
+  background-color: #1296db;
+}
+
+.header image {
+  width: 160rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 5rpx solid #fff;
+  position: absolute;
+  top: 80rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header view:last-child {
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.header view:last-child text {
+  font-size: 30rpx;
+}
+
+.txt1 {
+  margin-top: 90rpx;
+  margin-bottom: 10rpx;
+}
+
+.header view navigator {
+  margin-top: 120rpx;
+  font-size: 30rpx;
+}
+
+.header view navigator:active {
+  color: #1296db;
+}
+
+.v_body view {
+  background-color: #fff;
+  height: 100rpx;
+  margin-bottom: 5rpx;
+  position: relative;
+}
+
+.v_body view image {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30rpx;
+}
+
+.v_body view text {
+  font-size: 30rpx;
+  color: #1b1b1b;
+  line-height: 100rpx;
+  margin-left: 100rpx;
+}
+
+.v_body view:last-child {
+  margin-top: 20rpx;
+}
+
+.btn {
+  background-color: #fff;
+  border-radius: 0;
+  height: 100rpx;
+}
+
+.btn::after {
+  border: none;
+}
+
+.btn text {
+  position: absolute;
+  left: 0;
+}

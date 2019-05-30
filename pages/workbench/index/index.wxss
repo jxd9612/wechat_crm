@@ -1,0 +1,82 @@
+page {
+  background-color: #e6e6e6;
+}
+
+.wait {
+  width: 100%;
+  margin-top: 10rpx;
+}
+
+.title {
+  line-height: 70rpx;
+  font-size: 30rpx;
+  padding-left: 30rpx;
+  background-color: white;
+}
+
+.chos {
+  height: 350rpx;
+  margin-top: 3rpx;
+  background-color: white;
+}
+
+.v_left, .v_right {
+  width: 320rpx;
+  height: 240rpx;
+  margin-top: 50rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+}
+
+.v_left {
+  float: left;
+  margin-left: 30rpx;
+  background-color: #1296db;
+}
+
+.v_left:active {
+  background-color: #00a6ff;
+}
+
+.v_left text:first-child, .v_right text:first-child {
+  display: inline-block;
+  font-size: 80rpx;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.v_right {
+  float: right;
+  margin-right: 30rpx;
+  background-color: #bfbfbf;
+}
+
+.v_right:active {
+  background-color: #a3a3a3;
+}
+
+.link, .cust {
+  border-radius: 50%;
+}
+
+.link {
+  background-color: #f46969;
+}
+
+.link:active {
+  background-color: red !important;
+}
+
+.cust {
+  background-color: #fc9060;
+}
+
+.cust:active {
+  background-color: orange !important;
+}
+
+.con {
+  font-size: 40rpx !important;
+  line-height: 180rpx;
+}

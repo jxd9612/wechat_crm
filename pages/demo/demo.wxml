@@ -1,0 +1,29 @@
+<view class='container' wx:for='{{fowMsgList}}' wx:key='xxx'>
+  <view class='head'>
+    <view>
+      <image src='../../images/time_ico.png'></image>
+      <text>{{item.fol_firstTime}}</text>
+    </view>
+    <view>
+      <image src='../../images/addr_ico.png'></image>
+      <text>{{item.fol_addr}}</text>
+    </view>
+  </view>
+  <view class='body'>
+    <view class='body-head'>
+      <image src='../../images/ren_ico.png'></image>
+      <text>{{item.sta_name}}</text>
+      <text class='test'>{{item.cus_name}}｜{{item.fol_state}}</text>
+    </view>
+    <view class='space'></view>
+    <view class='body-text'>
+      <view>
+        <text>本次跟进内容:</text>
+        <view>{{item.fol_detail}}</view>
+      </view>
+      <view>
+        <text>下次跟进时间:　{{item.fol_nextTime}}</text>
+      </view>
+    </view>
+  </view>
+</view>

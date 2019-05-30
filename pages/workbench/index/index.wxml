@@ -1,0 +1,50 @@
+<view class='wait'>
+  <view class='title'>
+    <text>待办事项</text>
+  </view>
+  <view class='chos'>
+    <view class='v_left' bindtap='toList'>
+      <view>
+        <text>{{waitToFow}}</text>人
+        <text>\n待跟进客户</text>
+      </view>
+    </view>
+    <view class='v_right'>
+      <view>
+        <text>{{abandonClient}}</text>人
+        <text>\n已放弃客户</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='wait'>
+  <view class='title'>
+    <text>管理操作</text>
+  </view>
+  <view class='chos' wx:if='{{type==1}}'>
+    <view class='v_left link' bindtap='toOpera' data-op='1'>
+      <view>
+        <text class='con'>员工管理</text>
+      </view>
+    </view>
+    <view class='v_right cust' bindtap='toOpera' data-op='2'>
+      <view>
+        <text class='con'>客户管理</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='chos' wx:else>
+    <view class='v_left link' bindtap='toMineFow' data-op='1'>
+      <view>
+        <text class='con'>我的跟进</text>
+      </view>
+    </view>
+    <view class='v_right cust' bindtap='toFow' data-op='2'>
+      <view>
+        <text class='con'>新增跟进</text>
+      </view>
+    </view>
+  </view>
+</view>
